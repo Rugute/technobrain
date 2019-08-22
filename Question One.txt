@@ -1,0 +1,10 @@
+-- Question one Solution
+-- Rugut Kibet Enock 
+-- 22/08/2019
+SELECT 
+      Carmaker
+      ,Carmodel
+      ,Sum(SalePriceinDollar) TotalSalePrice
+FROM [Techno].[dbo].[Carsales] 
+WHERE  DATEDIFF(DAY, Saledate, getdate())<=30
+GROUP BY  Carmaker,Carmodel
