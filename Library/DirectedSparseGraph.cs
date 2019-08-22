@@ -1,10 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/***
+ * The Directed Sparse Graph Data Structure.
+ * 
+ * Definition:
+ * A sparse graph is a graph G = (V, E) in which |E| = O(|V|).
+ * A directed graph is a graph where each edge follow one direction only between any two vertices.
+ * 
+ * An adjacency-list digraph (directed-graph) representation. 
+ * Implements the IGraph<T> interface.
+ */
 
-namespace Employees
+using System;
+using System.Collections.Generic;
+
+namespace Library
 {
     public class DirectedSparseGraph<T> : IGraph<T> where T : IComparable<T>
     {
@@ -121,8 +129,8 @@ namespace Employees
         {
             if (!HasVertex(vertex))
                 throw new KeyNotFoundException("Vertex doesn't belong to graph.");
-
-            foreach (var adjacent in _adjacencyList.Keys)
+            
+            foreach(var adjacent in _adjacencyList.Keys)
             {
                 if (_adjacencyList[adjacent].Contains(vertex))
                     yield return (new UnweightedEdge<T>(
@@ -140,7 +148,7 @@ namespace Employees
             if (!HasVertex(vertex))
                 throw new KeyNotFoundException("Vertex doesn't belong to graph.");
 
-            foreach (var adjacent in _adjacencyList[vertex])
+            foreach(var adjacent in _adjacencyList[vertex])
                 yield return (new UnweightedEdge<T>(
                     vertex,     // from
                     adjacent    // to

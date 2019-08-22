@@ -1,10 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Employees
+namespace Library
 {
     public interface IGraph<T> where T : IComparable<T>
     {
@@ -115,3 +112,4 @@ namespace Employees
         void Clear();
     }
 }
+

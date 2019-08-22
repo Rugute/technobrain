@@ -1,10 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Employees
+namespace Library
 {
     /// <summary>
     /// The Doubly-Linked List Node class.
@@ -324,9 +321,9 @@ namespace Employees
         /// <param name="index">Index.</param>
         public virtual void InsertAt(T dataItem, int index)
         {
-            if (index < 0 || index > Count)
+            if(index < 0 || index > Count)
                 throw new IndexOutOfRangeException();
-
+            
             if (index == 0)
             {
                 Prepend(dataItem);
@@ -900,4 +897,3 @@ namespace Employees
     }
 
 }
-
